@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Driver</title>
+  <link rel="stylesheet" href="app.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+  <div id="root">
+    <header>
+      <!-- Navigation Bar -->
+      <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="/">LOGO</a>
+        </div>
+        <!-- Menu Items -->
+        <nav>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="menu-item">
+              <a href="/shop">Shop</a>
+            </li>
+            <li class="menu-item">
+              <a href="/categories">Categories</a>
+            </li>
+            <li class="menu-item">
+              <a href="/about">About Us</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1>Food Driver</h1>
+
+      <section>
+        <h2>Food Categories</h2>
+
+        <div class="grid">
+          <div class="grid-item">
+            <a href="categories/asian">
+              <img src="images/asian.jpg" alt="Asian Food" />
+              <span>Asian</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/cheap">
+              <img src="images/cheap.jpeg" alt="Cheap Food" />
+              <span>Cheap</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/fast-food">
+              <img src="images/fast-food.jpg" alt="Fast Food" />
+              <span>Fast Food</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/gluten-free">
+              <img src="images/gluten-free.jpg" alt="Gluten Free Food" />
+              <span>Gluten Free</span>
+            </a>
+          </div>
+          
+          <div class="grid-item">
+            <a href="categories/healthy">
+              <img src="images/healthy.jpg" alt="Healthy Food" />
+              <span>Healthy</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/restaurant">
+              <img src="images/restaurant.jpg" alt="Restaurant Food" />
+              <span>Restaurant</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/spicy">
+              <img src="images/spicy.jpg" alt="Spicy Food" />
+              <span>Spicy</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/vegan">
+              <img src="images/vegan.jpg" alt="Vegan Food" />
+              <span>Vegan</span>
+            </a>
+          </div>
+
+          <div class="grid-item">
+            <a href="categories/vegetarian">
+              <img src="images/vegetarian.jpeg" alt="Vegetarian Food" />
+              <span>Vegetarian</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>Map</h1>
+
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <!-- 
+        what it is (about us)
+        nearby food places (in map form)
+       -->
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
