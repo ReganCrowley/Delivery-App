@@ -57,9 +57,7 @@ body {
  * Grid
  */
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
 }
 
 .grid>.grid-item {
