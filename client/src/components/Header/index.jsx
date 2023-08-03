@@ -1,4 +1,7 @@
 import { useState } from "react";
+import '../../App.css';
+import { Link } from "react-router-dom"
+import { useEffect } from "react";
 
 export default function Header() {
   const categories = [
@@ -53,7 +56,8 @@ export default function Header() {
     {
       name: "KFC",
       tags: ["fast-food"],
-      description: 'Fried chicken buckets and burgers'
+      description: 'Fried chicken buckets and burgers',
+      image: "restaurants/KFC.jpg"
     },
     {
       name: "Sandy Cafe",
@@ -227,7 +231,11 @@ export default function Header() {
     }
   ]
 
-  const [currentlySelectedCategory, setCurrentlySelectedCategory] = useState('')
+  const [currentlySelectedCategory, setCurrentlySelectedCategory] = useState(localStorage.getItem('category') || "")
+
+  useEffect(() => {
+    localStorage.setItem('category', currentlySelectedCategory);
+  })
 
   return (
     <>
@@ -238,11 +246,14 @@ export default function Header() {
           // if category is empty, render the categories
           currentlySelectedCategory === '' ?
             (
-              <div class='grid'>
+              <div className='grid'>
                 {
                   categories.map(c => (
-                    <div class='grid-item'>
-                      <div onClick={() => setCurrentlySelectedCategory(c.category)}>
+                    <div className='grid-item'>
+                      <div onClick={() => {
+                        //console.log(c.category);
+                        setCurrentlySelectedCategory(c.category)
+                      }}>
                         <img className="food-img" src={`images/${c.image}`} alt={`${c.label} Food`} />
                         <div>{c.label}</div>
                       </div>
@@ -257,12 +268,18 @@ export default function Header() {
                 <button onClick={() => setCurrentlySelectedCategory('')}>Back to Categories</button>
                 {
                   // filter out any restaurants that dont include the currently selected category in their tags
-                  restaurants.filter(r => r.tags.some(t => t === currentlySelectedCategory)).map(restaurant => (
-                    <div style={{ textAlign: 'left' }}>
-                      <h4 style={{ marginBottom: 0 }}>{restaurant.name}</h4>
-                      <p style={{ marginTop: 2 }}>{restaurant.description}</p>
+                  restaurants.filter(r => r.tags.some(t => t === currentlySelectedCategory)).map(r => (
+                    <Link to="/menu" style={{ color: "black" }} state={{ restaurantName: r.name }}>
+                      <div style={{ textAlign: 'left' }} className="parent-container">
 
-                    </div>
+                        <img src={`images/${r.image || "Resturant-testing.jpg"}`} className="left-image" />
+                        <div className="right-content">
+                          <h4 style={{ marginBottom: 0, color: "green" }}>{r.name}</h4>
+                          <p style={{ marginTop: 2 }}>{r.description}</p>
+                        </div>
+
+                      </div>
+                    </Link>
                   ))
                 }
               </div>

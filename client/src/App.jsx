@@ -2,13 +2,24 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
-import { Header } from './components';
+
+import { Header, Menu, Map } from './components';
 
 function App() {
   return (
     <>
-      <Header />
+
+
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Header />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/map" element={<Map />} />
+        </Routes>
+      </BrowserRouter>
 
       {/*<Map /> */}
     </>

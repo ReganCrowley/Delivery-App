@@ -1,0 +1,40 @@
+[
+    {
+        "name": "KFC",
+        "menu": [
+            {
+                "name": "French Fries",
+                "cost": 2.4
+            },
+            {
+                "name": "English Fries",
+                "cost": 2.9
+            },
+            {
+                "name": "Coke Large",
+                "cost": 7
+            },
+            {
+                "name": "5 Chicken wings",
+                "cost": 10
+            },
+            {
+                "name": "Crispy Chicken leg",
+                "cost": 3
+            }
+        ]
+    },
+    {
+        "name": "Sandy Cafe",
+        "menu": [
+            {
+                "name": "French Fries",
+                "cost": 24
+            },
+            {
+                "name": "English Fries",
+                "cost": 29
+            }
+        ]
+    }
+]
